@@ -1,0 +1,235 @@
+.slp-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+  animation: slp-slide-in 0.4s ease-out;
+}
+
+@keyframes slp-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slp-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.slp-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent-emerald); flex-shrink: 0;
+}
+
+.slp-header-text {
+  flex: 1;
+}
+
+.slp-title {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.slp-subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.slp-close {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.slp-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.slp-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.slp-error-banner {
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+  color: #e74c3c;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.slp-field {
+  margin-bottom: 16px;
+}
+
+.slp-field:last-of-type {
+  margin-bottom: 0;
+}
+
+.slp-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.slp-label-icon {
+  display: flex; align-items: center;
+  color: var(--accent-emerald);
+}
+
+.slp-optional {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-left: 4px;
+}
+
+.slp-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+}
+
+.slp-input:focus {
+  outline: none;
+  border-color: white;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.slp-input::placeholder {
+  color: #999;
+}
+
+.slp-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.slp-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.slp-btn-save,
+.slp-btn-skip {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.slp-btn-save {
+  flex: 1;
+  background: white;
+  color: #667eea;
+}
+
+.slp-btn-save:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.slp-btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slp-btn-skip {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.slp-btn-skip:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.slp-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: slp-spin 0.6s linear infinite;
+}
+
+@keyframes slp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .slp-container {
+    padding: 18px;
+  }
+
+  .slp-form {
+    padding: 16px;
+  }
+
+  .slp-actions {
+    flex-direction: column;
+  }
+
+  .slp-btn-save,
+  .slp-btn-skip {
+    width: 100%;
+  }
+}

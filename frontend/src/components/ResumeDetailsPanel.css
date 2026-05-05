@@ -1,0 +1,311 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESUME DETAILS PANEL
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.rdp-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 36px 24px;
+  text-align: center;
+}
+
+.rdp-empty-icon {
+  width: 60px; height: 60px; border-radius: 15px;
+  background: rgba(16,185,129,0.07); border: 1px solid rgba(16,185,129,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent-emerald); margin: 0 auto 14px;
+}
+
+.rdp-empty p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.rdp-parse-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  background: var(--accent-primary);
+  color: var(--bg-base);
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 180px;
+  justify-content: center;
+}
+
+.rdp-parse-btn:hover:not(:disabled) {
+  background: var(--accent-soft);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.rdp-parse-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.rdp-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: var(--bg-base);
+  border-radius: 50%;
+  animation: rdp-spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes rdp-spin {
+  to { transform: rotate(360deg); }
+}
+
+.rdp-error {
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  width: 100%;
+  text-align: left;
+}
+
+/* Parsed view */
+.rdp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Header */
+.rdp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.rdp-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.rdp-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rdp-contact-chip {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.rdp-reparse-btn {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.rdp-reparse-btn:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.rdp-reparse-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Sections */
+.rdp-section {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.rdp-section:last-of-type {
+  border-bottom: none;
+}
+
+.rdp-section-title {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-primary);
+  margin-bottom: 12px;
+}
+
+.rdp-summary {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Tags */
+.rdp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rdp-tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+}
+
+.rdp-tag-cert {
+  border-color: rgba(46, 204, 113, 0.3);
+  color: var(--success);
+}
+
+/* Timeline */
+.rdp-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rdp-timeline-item {
+  padding: 12px 14px;
+  background: var(--bg-elevated);
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+}
+
+.rdp-timeline-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.rdp-role {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.rdp-company {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.rdp-duration {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-disabled);
+  font-family: var(--font-mono);
+  background: var(--bg-surface);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.rdp-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Projects */
+.rdp-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rdp-project-item {
+  padding: 12px 14px;
+  background: var(--bg-elevated);
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+}
+
+.rdp-project-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rdp-project-link {
+  font-size: 14px;
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.rdp-project-tech {
+  font-size: 12px;
+  color: var(--accent-soft);
+  font-family: var(--font-mono);
+  margin-bottom: 6px;
+}
+
+/* List */
+.rdp-list {
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rdp-list li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Footer */
+.rdp-footer {
+  padding: 10px 24px;
+  font-size: 11px;
+  color: var(--text-disabled);
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--border-subtle);
+}

@@ -1,0 +1,341 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESOLVER RESULT CARD — Dark Obsidian + Ember
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.resolver-result-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  animation: resultSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes resultSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.resolver-result-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 32px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Header */
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.result-company-info { flex: 1; }
+
+.result-company {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.5px;
+}
+
+.result-role {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.result-status-badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* Meta */
+.result-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+}
+
+.meta-item strong {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-family: var(--font-body);
+}
+
+/* Resume section */
+.result-resume-section {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 4px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resume-label-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-icon { font-size: 18px; flex-shrink: 0; }
+
+.resume-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resume-type-badge {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 5px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.rtype-pdf {
+  background: rgba(231, 76, 60, 0.15);
+  color: #ff6b6b;
+  border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.rtype-docx {
+  background: rgba(52, 152, 219, 0.15);
+  color: #74b9ff;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.rtype-file {
+  background: var(--bg-surface);
+  color: var(--text-disabled);
+  border: 1px solid var(--border-subtle);
+}
+
+.resume-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-preview,
+.btn-download {
+  padding: 9px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.btn-preview {
+  background: var(--bg-base);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+}
+
+.btn-preview:hover:not(:disabled) {
+  background: var(--accent-glow);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.btn-download {
+  background: var(--accent-primary);
+  color: var(--bg-base);
+}
+
+.btn-download:hover:not(:disabled) {
+  background: var(--accent-soft);
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn-preview:disabled,
+.btn-download:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* No resume */
+.result-no-resume {
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+  color: var(--text-disabled);
+  font-size: 13px;
+  margin: 4px 0 12px;
+  border: 1px dashed var(--border-subtle);
+}
+
+/* Notes */
+.result-notes {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.result-notes p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.result-notes strong { color: var(--text-primary); }
+
+/* ── PDF Preview Modal ── */
+.pdf-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.pdf-modal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 860px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.pdf-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  gap: 12px;
+}
+
+.pdf-modal-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.pdf-btn-newtab {
+  padding: 6px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pdf-btn-newtab:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.pdf-btn-close {
+  width: 32px;
+  height: 32px;
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: var(--danger);
+  border-radius: 7px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdf-btn-close:hover {
+  background: rgba(231, 76, 60, 0.2);
+}
+
+.pdf-modal-body {
+  flex: 1;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .resolver-result-card { padding: 16px; }
+  .result-header { flex-direction: column; gap: 10px; }
+  .result-company { font-size: 17px; }
+  .result-resume-section { flex-direction: column; align-items: flex-start; }
+  .resume-actions { width: 100%; }
+  .btn-preview, .btn-download { flex: 1; text-align: center; }
+  .pdf-overlay { padding: 0; }
+  .pdf-modal { border-radius: 0; height: 100vh; max-width: 100%; }
+}

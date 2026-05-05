@@ -1,0 +1,119 @@
+.stat-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: rgba(18, 27, 24, 0.65);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--card-gradient);
+  opacity: 0.05;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: 0 8px 24px var(--card-glow);
+  transform: translateY(-4px);
+}
+
+.stat-card:hover::before {
+  opacity: 0.1;
+}
+
+.stat-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--card-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px var(--card-glow);
+  transition: all var(--transition-base);
+  position: relative;
+  z-index: 2;
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 8px 20px var(--card-glow);
+}
+
+.stat-content {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-decoration {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  background: var(--card-gradient);
+  border-radius: 50%;
+  opacity: 0.05;
+  filter: blur(40px);
+  pointer-events: none;
+  transition: all var(--transition-slow);
+}
+
+.stat-card:hover .stat-decoration {
+  opacity: 0.15;
+  transform: translateY(-50%) scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .stat-card {
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+  
+  .stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .stat-value {
+    font-size: 28px;
+  }
+  
+  .stat-label {
+    font-size: 12px;
+  }
+}

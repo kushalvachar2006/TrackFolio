@@ -1,0 +1,31 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   APP SHELL LAYOUT
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-base);
+}
+
+/* Content area sits to the right of the fixed sidebar */
+.app-content {
+  flex: 1;
+  min-width: 0;                  /* prevent flex blowout */
+  display: flex;
+  flex-direction: column;
+  margin-left: 256px;            /* matches expanded sidebar width */
+  transition: margin-left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-content--collapsed {
+  margin-left: 68px;             /* matches collapsed sidebar width */
+}
+
+/* The sticky Header inside each page will now span only this column */
+
+@media (max-width: 1023px) {
+  .app-content {
+    margin-left: 0;              /* sidebar hidden on mobile */
+  }
+}

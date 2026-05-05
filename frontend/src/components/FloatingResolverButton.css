@@ -1,0 +1,55 @@
+.floating-resolver-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(5, 150, 105, 0.45);
+  transition: all var(--transition-base);
+  letter-spacing: -0.01em;
+}
+
+.floating-resolver-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(5, 150, 105, 0.6);
+  background: linear-gradient(135deg, #047857, #059669);
+}
+
+.floating-resolver-btn:active {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-text {
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .floating-resolver-btn {
+    bottom: 24px;
+    right: 24px;
+    padding: 14px 20px;
+    font-size: 14px;
+  }
+  
+  .btn-text {
+    display: none;
+  }
+  
+  .floating-resolver-btn {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}

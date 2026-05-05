@@ -1,0 +1,238 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   APPLICATION CARD — Dark Obsidian + Ember
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* Mobile Card */
+.application-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.application-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+}
+
+.card-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+  letter-spacing: -0.3px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  background: transparent;
+  border: 1px solid currentColor;
+  flex-shrink: 0;
+}
+
+.card-body {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-field { display: flex; flex-direction: column; gap: 2px; }
+
+.card-field label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-disabled);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.card-field p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.notes-preview {
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  line-height: 1.4;
+}
+
+.card-footer {
+  display: flex;
+  gap: 8px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.status-select {
+  flex: 1;
+  padding: 8px 12px;
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.btn-edit, .btn-delete {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-edit {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-edit:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-glow);
+}
+
+.btn-delete {
+  background: rgba(231, 76, 60, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.btn-delete:hover {
+  background: rgba(231, 76, 60, 0.2);
+  border-color: var(--danger);
+}
+
+/* Table Row - Desktop */
+.application-row {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 0.15s ease;
+}
+
+.application-row:last-child { border-bottom: none; }
+
+.application-row:hover { background: var(--bg-elevated); }
+
+.company-cell, .role-cell, .date-cell,
+.portal-cell, .resume-cell, .status-cell,
+.notes-cell, .actions-cell {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.company-cell {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.role-cell { color: var(--text-secondary); }
+
+.date-cell {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.portal-cell, .resume-cell {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.status-select-inline {
+  border: none;
+  border-bottom: 2px solid;
+  background: transparent;
+  font-weight: 700;
+  font-family: var(--font-body);
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 12px;
+  outline: none;
+  transition: opacity 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-select-inline:hover { opacity: 0.75; }
+.status-select-inline option { background: var(--bg-elevated); color: var(--text-primary); }
+
+.notes-cell {
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-disabled);
+  font-size: 13px;
+}
+
+.actions-cell { text-align: center; }
+
+.btn-icon {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  margin: 0 3px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  background: var(--accent-glow);
+}
+
+@media (max-width: 768px) {
+  .application-row { display: none; }
+  .application-card { display: block; }
+}
+
+@media (min-width: 769px) {
+  .application-card { display: none; }
+}
